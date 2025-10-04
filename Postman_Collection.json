@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "Express.js Exercise 05 - API Testing",
+    "description": "Collection for testing all routes in the Express.js exercise",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home Route",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/home",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["home"]
+        }
+      }
+    },
+    {
+      "name": "Profile Route",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "profile"]
+        }
+      }
+    },
+    {
+      "name": "Login - Valid Credentials",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"bret\",\n  \"password\": \"bret@123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "login"]
+        }
+      }
+    },
+    {
+      "name": "Login - Invalid Username",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"wrong\",\n  \"password\": \"bret@123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "login"]
+        }
+      }
+    },
+    {
+      "name": "Login - Invalid Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"bret\",\n  \"password\": \"wrong\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "login"]
+        }
+      }
+    },
+    {
+      "name": "Logout Route",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/logout?username=bret",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "logout"],
+          "query": [
+            {
+              "key": "username",
+              "value": "bret"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
