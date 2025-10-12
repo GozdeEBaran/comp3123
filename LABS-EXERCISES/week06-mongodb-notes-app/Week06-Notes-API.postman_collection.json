@@ -1,0 +1,253 @@
+{
+  "info": {
+    "_postman_id": "notes-app-week06-collection",
+    "name": "Week06 - Notes API",
+    "description": "Complete API collection for the Week06 MongoDB Notes Application. Import this collection to test all CRUD operations.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Welcome Message",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": [""]
+        },
+        "description": "Returns the welcome message for the Notes application"
+      },
+      "response": []
+    },
+    {
+      "name": "Create New Note",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"content\": {\n        \"noteTitle\": \"Sample Note Title\",\n        \"noteDescription\": \"Sample Note Description\",\n        \"priority\": \"HIGH\",\n        \"dateAdded\": \"12/Oct/2025\",\n        \"dateUpdated\": \"12/Oct/2025\"\n    }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes"]
+        },
+        "description": "Creates a new note in the database. Priority values can be: HIGH, MEDIUM, or LOW."
+      },
+      "response": []
+    },
+    {
+      "name": "Create Note - Meeting",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"content\": {\n        \"noteTitle\": \"Team Meeting\",\n        \"noteDescription\": \"Discuss Q4 goals and project milestones\",\n        \"priority\": \"HIGH\",\n        \"dateAdded\": \"12/Oct/2025\",\n        \"dateUpdated\": \"12/Oct/2025\"\n    }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes"]
+        },
+        "description": "Example: Create a meeting note with HIGH priority"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Note - Shopping",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"content\": {\n        \"noteTitle\": \"Shopping List\",\n        \"noteDescription\": \"Milk, Bread, Eggs, Coffee\",\n        \"priority\": \"LOW\",\n        \"dateAdded\": \"12/Oct/2025\",\n        \"dateUpdated\": \"12/Oct/2025\"\n    }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes"]
+        },
+        "description": "Example: Create a shopping list note with LOW priority"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Note - Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"content\": {\n        \"noteTitle\": \"Code Review\",\n        \"noteDescription\": \"Review PR #123 and PR #456 before EOD\",\n        \"priority\": \"MEDIUM\",\n        \"dateAdded\": \"12/Oct/2025\",\n        \"dateUpdated\": \"12/Oct/2025\"\n    }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes"]
+        },
+        "description": "Example: Create a task note with MEDIUM priority"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Notes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes"]
+        },
+        "description": "Retrieves all notes from the database"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Note by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/notes/68eb21c8ac884968425cbe16",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes", "68eb21c8ac884968425cbe16"]
+        },
+        "description": "Retrieves a single note by its ID. Replace the ID in the URL with an actual note ID from your database."
+      },
+      "response": []
+    },
+    {
+      "name": "Update Note by ID",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"content\": {\n        \"noteTitle\": \"Updated Note Title\",\n        \"noteDescription\": \"This note has been updated with new information\",\n        \"priority\": \"MEDIUM\",\n        \"dateAdded\": \"12/Oct/2025\",\n        \"dateUpdated\": \"12/Oct/2025\"\n    }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/notes/68eb21c8ac884968425cbe16",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes", "68eb21c8ac884968425cbe16"]
+        },
+        "description": "Updates an existing note by its ID. Replace the ID in the URL with an actual note ID from your database."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Note by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/notes/68eb21c8ac884968425cbe16",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes", "68eb21c8ac884968425cbe16"]
+        },
+        "description": "Deletes a note by its ID. Replace the ID in the URL with an actual note ID from your database."
+      },
+      "response": []
+    },
+    {
+      "name": "Test 404 - Invalid ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/notes/invalidid123",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes", "invalidid123"]
+        },
+        "description": "Test error handling: This should return a 404 or 500 error for invalid note ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Test 400 - Empty Content",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "notes"]
+        },
+        "description": "Test validation: This should return a 400 error for empty content"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081",
+      "type": "string"
+    }
+  ]
+}
